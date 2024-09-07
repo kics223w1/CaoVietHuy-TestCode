@@ -38,6 +38,15 @@ const Home = () => {
         id="about"
       />
       <ContentBlock
+        direction="left"
+        title={AboutContent.title}
+        content={AboutContent.text}
+        section={AboutContent.section}
+        icon="graphs.svg"
+        id="about"
+        imagePosition="right"
+      />
+      <ContentBlock
         direction="right"
         title={MissionContent.title}
         content={MissionContent.text}

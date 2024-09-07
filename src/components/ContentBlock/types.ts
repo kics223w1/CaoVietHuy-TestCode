@@ -8,17 +8,12 @@ export interface ContentBlockProps {
     content: string;
     icon: string;
   }[];
-  button?: (
-    | {
-        title: string;
-        color?: undefined;
-      }
-    | {
-        title: string;
-        color: string;
-      }
-  )[];
+  button?: {
+    title: string;
+    color?: string;
+  }[];
   t: TFunction;
   id: string;
   direction: "left" | "right";
+  imagePosition?: "left" | "right"; // Add this new prop
 }
