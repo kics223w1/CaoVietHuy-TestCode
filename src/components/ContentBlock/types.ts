@@ -1,4 +1,3 @@
-import { TFunction } from "react-i18next";
 export interface ContentBlockProps {
   icon: string;
   title: string;
@@ -14,6 +13,6 @@ export interface ContentBlockProps {
   }[];
   t: any;
   id: string;
-  direction: "left" | "right" | "up" | "down";
+  direction: "left" | "right";
   imagePosition?: "left" | "right"; // Add this new prop
 }
