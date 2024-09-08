@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LangChainProps, OptionalString } from "./types";
+import { OptionalString } from "./types";
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
@@ -8,6 +8,8 @@ import Input from "../../common/Input";
 import { LangchainContainer, FormGroup, ButtonContainer } from "./styles";
 import TextArea from "../../common/TextArea";
 import LangChainChatBot from "../../models/langChainChatBot";
+import Block from "../Block";
+import LangChainContent from "../../content/LangChainContent.json";
 
 const LangChain = () => {
   const [question, setQuestion] = useState<OptionalString>(undefined);
@@ -46,7 +48,10 @@ const LangChain = () => {
       <Row justify="space-between" align="middle">
         <Col lg={12} md={11} sm={24} xs={24}>
           <Slide direction="left" triggerOnce>
-            {/* <Block title={title} content={content} /> */}
+            <Block
+              title={LangChainContent.title}
+              content={LangChainContent.text}
+            />
           </Slide>
         </Col>
         <Col lg={12} md={12} sm={24} xs={24}>

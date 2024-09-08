@@ -8,6 +8,7 @@ class LangChainChatBot {
     this.model = new ChatOpenAI({
       openAIApiKey: apiKey,
       streaming: true,
+      modelName: "gpt-4-1106-preview",
     });
   }
 
