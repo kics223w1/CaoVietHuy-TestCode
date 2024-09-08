@@ -1,0 +1,4 @@
+{
+  "title": "LangChain Q&A",
+  "text": "Welcome to the LangChain Q&A interface. You can ask any question in the provided text area. Our AI-powered system will use LangChain with the OpenAI model to process your query and provide an informative answer based on the available knowledge base."
+}
