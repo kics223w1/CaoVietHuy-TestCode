@@ -4,10 +4,10 @@ import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
 import { Button } from "../../common/Button";
-import Block from "../Block";
 import Input from "../../common/Input";
 import { LangchainContainer, FormGroup, ButtonContainer } from "./styles";
 import TextArea from "../../common/TextArea";
+import LangChainChatBot from "../../models/langChainChatBot";
 
 const LangChain = () => {
   const [question, setQuestion] = useState<OptionalString>(undefined);
@@ -19,21 +19,26 @@ const LangChain = () => {
     setIsLoading(true);
     setResult(undefined);
 
-    // try {
-    //   if (!question) {
-    //     throw new Error("Question is required");
-    //   }
+    try {
+      if (!question) {
+        throw new Error("Question is required");
+      }
 
-    //   const langChainChatBot = new LangChainChatBot();
+      const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
+      if (!apiKey) {
+        throw new Error("OpenAI API key is not set");
+      }
 
-    //   await langChainChatBot.streamMessage(question, (chunk: string) => {
-    //     setResult((prevResult) => (prevResult || "") + chunk);
-    //   });
-    // } catch (e: any) {
-    //   setResult(`Error: ${e.message}`);
-    // } finally {
-    //   setIsLoading(false);
-    // }
+      const langChainChatBot = new LangChainChatBot(apiKey);
+
+      await langChainChatBot.streamMessage(question, (chunk: string) => {
+        setResult((prevResult) => (prevResult || "") + chunk);
+      });
+    } catch (e: any) {
+      setResult(`Error: ${e.message}`);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
