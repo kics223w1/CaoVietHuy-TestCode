@@ -22,6 +22,25 @@ Thank you for taking the time to review this project. I hope you find it interes
    npm start
    ```
 
+## Implementation Details
+
+### Task 1: Input Field and Result Display
+
+- Implemented an input field for user interaction
+- Added functionality to display the input result below the field
+
+### Task 2: Flexible Image Positioning
+
+- Enhanced the `ContentBlock` component with a new `imagePosition` prop
+- This prop allows dynamic switching of image position within the content block
+- Please review at file `src/components/ContentBlock/index.tsx`
+
+### Task 3: Chatbot Integration
+
+- Integrated a chatbot using the [langchain/openai](https://www.npmjs.com/package/@langchain/openai) library
+- Implemented conversational AI functionality to enhance user interaction
+- Please review at file `src/models/langChainChatBot.ts`
+
 ## Review Guidelines
 
 Once the application is running, please verify the following:
